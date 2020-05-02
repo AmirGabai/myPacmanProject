@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="./jquery-3.4.1.slim.min.js"></script>
+	<script src="./jquery.validate.js"></script>
+	<script type="text/javascript" src="./jquery.ba-outside-events.js"></script>
+	<script type="text/javascript" src="./MenuLogic.js"></script>
+	<script type="text/javascript" src="./app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+	<audio id="pacmanMusic">
+		<source src="music.mp3" type="audio/mpeg">
+	</audio>
+
+	
+	<div id="header">
+		<img src="header.png" alt="header picture" width="100%" height="250px">
+	</div>
+
+	<div id="menu">
+		<span id="menuWelcome" onclick="menuWelcomeClicked()">
+			Welcome
+		</span>
+		<span id="menuRegister" onclick="menuRegisterClicked()">
+			Register
+		</span>
+		<span id="menuLogin" onclick="menuLoginClicked()">
+			Login
+		</span>
+		<span id="menuAbout" onclick="menuAboutClicked()">
+			About
+		</span>
+	</div>
+
+	<div id="container">
+
+		<div id="welcome">
+			<button type="button" onclick="menuLoginClicked()">Login</button>
+			<button type="button" onclick="menuRegisterClicked()">Register</button>
+		</div>
+
+		<div id="register">
+
+			<!-- <form id="registerForm" onsubmit="submitRegisteration()"> -->
+			<form id="registerForm">
+
+				<label for="registerUserName">Username:</label>
+				<input type="text" id="registerUserName" name="registerUserName"><br>
+
+				<label for="registerPassword">Password:</label>
+				<input type="text" id="registerPassword" name="registerPassword"><br>
+
+				<label for="registerFullName">Full Name:</label>
+				<input type="text" id="registerFullName" name="registerFullName"><br>
+
+				<label for="registerEmail">Email:</label>
+				<input type="text" id="registerEmail" name="registerEmail"><br>
+
+				<label>Birth Date: </label>
+				<label for="registerDay">Day:</label>
+				<select id="registerDay">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<label for="registerMonth">Month:</label>
+				<select id="registerMonth">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+				<label for="registerYear">Year:</label>
+				<select id="registerYear">
+					<option value="2010">2010</option>
+					<option value="2009">2009</option>
+					<option value="2008">2008</option>
+					<option value="2007">2007</option>
+					<option value="2006">2006</option>
+					<option value="2005">2005</option>
+					<option value="2004">2004</option>
+					<option value="2003">2003</option>
+					<option value="2002">2002</option>
+					<option value="2001">2001</option>
+					<option value="2000">2000</option>
+				</select>
+				<br>
+				<!-- <input type="submit" value="Submit"> -->
+				<button type="button" onclick="submitRegisteration()">Complete Registration</button>
+			</form>
+		</div>
+
+		<div id="login">
+			<label for="loginUserName">Username:</label>
+			<input type="text" id="loginUserName" name="loginUserName"><br>
+
+			<label for="loginPassword">Password:</label>
+			<input type="text" id="loginPassword" name="loginPassword"><br>
+
+			<button type="button" onclick="login()">Login</button>
+		</div>
+
+
+		<div id="gameScreen">
+			<div id="settings">
+				<label style="text-align: center;">Game Settings</label><br>
+				<label for="keyUp">Key Up:</label>
+				<input type="text" id="keyUp" onkeydown="keySelectionDown(event, this)" readonly>
+
+				<label for="keyDown">Key Down:</label>
+				<input type="text" id="keyDown" onkeydown="keySelectionDown(event, this)" readonly>
+
+				<label for="keyLeft">Key Left:</label>
+				<input type="text" id="keyLeft" onkeydown="keySelectionDown(event, this)" readonly><br>
+
+				<label for="keyRight">Key Right:</label>
+				<input type="text" id="keyRight" onkeydown="keySelectionDown(event, this)" readonly>
+
+				<label for="candyNum">Number Of Candies:</label>
+				<input type="text" id="candyNum">
+				<label>(between 50 to 90)</label><br>
+
+				<label for="gameTime">Game Time:</label>
+				<input type="text" id="gameTime">
+				<label>(minimum 60 seconds)</label>
+
+				<label for="monstersNum">Number Of Monsters:</label>
+				<input type="text" id="monstersNum">
+				<label>(between 1 to 4)</label><br>
+
+				<button type="button" onclick="randomSettings()">Random Settings</button>
+
+				<button type="button" onclick="startGameClicked()">Start Game</button>
+
+			</div>
+
+			<div id="gameLogic">
+				<div id="gameInformation">
+					<span id="playerName">
+						<label for="lblPlayerName">PLAYER NAME:</label>
+						<input id="lblPlayerName" type="text" readonly />
+					</span><br>
+					<span id="score">
+						<label for="lblScore">SCORE:</label>
+						<input id="lblScore" type="text" readonly size=8 />
+					</span>
+					<span id="time">
+						<label for="lblTime">TIME:</label>
+						<input id="lblTime" type="text" readonly size=12/>
+					</span>
+					<span id="lives">
+						<label for="lblLives">LIVES:</label>
+						<input id="lblLives" type="text" readonly size=8/>
+					</span>
+				</div>
+				<div id="game">
+					<canvas id="canvas" height="600" width="600"></canvas>
+				</div>
+			</div>
+			
+
+
+		</div>
+
+		<dialog id = "about">
+			<div id="closeAboutModal">
+				<span id="closeAboutDialog" onclick="closeAboutDialog()">X</span>
+			</div>
+			<h2>We are Amir Gabay And Assaf Attias</h2>
+			<h3>We used the jQuery plugin in order to make this pacman game. We used it's validation abilitties and selectors.</h2>
+			<h3>We used some functions and objects from the template we were given.</h3>
+		</dialog>
+
+	</div>
+
+
+
+	<div id="footer">
+		For any concern please email us at: pacmanProject@gmail.com<br>
+		Copyright - Amir Gabay & Assaf Attias 
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

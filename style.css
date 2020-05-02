@@ -1,0 +1,175 @@
+/* body
+{
+    text-align: center;
+} */
+
+body
+{
+    background-color: antiquewhite;
+    font-family: fantasy;
+    width:99%;
+}
+
+/* #container
+{
+    height:85vh;
+    padding-top: 10px;
+}  */
+
+button
+{
+    font-family: fantasy;
+    font-size: 22px;
+    padding:5px;
+    margin: 5px;
+    background-color: darkblue;
+    border: 0px;
+    color: white;
+}
+
+button:hover
+{
+    background-color: royalblue;
+}
+
+#container > div
+{
+    display: none;
+}
+
+#footer
+{
+    padding: 1%;
+    background-color: salmon;
+    text-align: center;
+}
+
+#gameScreen > #gameLogic > #gameInformation > span > input
+{
+    border: 0px;
+    background-color: transparent ;
+}
+
+#settings
+{
+    background-color: sandybrown;
+    border-style: solid;
+    width:99.75%;
+}
+
+#gameLogic
+{
+    text-align: center;
+}
+
+#closeAboutDialog
+{
+    cursor : pointer;
+}
+
+#closeAboutModal
+{
+    text-align: right;
+    text-decoration: underline;
+    color: blue;
+}
+
+#menu
+{
+    width:100%;
+}
+
+#menu > span
+{
+    font-size: 24px;
+    padding-right: 9.5%;
+    padding-left:9.5%;
+    padding-top:0.2%;
+    padding-bottom:0.2%;
+    cursor:pointer;
+}
+
+#menuWelcome
+{
+    background-color: turquoise;
+}
+
+#menuRegister
+{
+    background-color: violet;
+}
+
+#menuLogin
+{
+    background-color: springgreen;
+}
+
+#menuAbout
+{
+    background-color: salmon;
+}
+
+#container
+{
+    font-size: 22px;
+    margin: 5%;
+}
+
+#welcome
+{
+    text-align: center;
+}
+
+#register
+{
+    padding-left: 40%;
+}
+
+#registerForm > button
+{
+    margin-left: 15%;
+}
+
+input
+{
+    height:22px;
+    font-size: 22px;
+}
+
+select
+{
+    height:22px;
+    font-size: 22px;
+}
+
+#login
+{
+    padding-left: 40%;
+}
+
+#login > button
+{
+    margin-left: 25%;
+}
+
+#score
+{
+    margin-left: 50px;
+}
+
+#lives
+{
+    margin-left: 50px;
+}
+
+#gameInformation
+{
+    margin-left: 70px;
+}
+
+#playerName
+{
+    margin-left: -240px;
+}
+
+
